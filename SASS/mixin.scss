@@ -1,0 +1,9 @@
+@use 'variables.scss' as *;
+
+@mixin linearBackGround {
+  background: linear-gradient(193.33deg, $color-primary -11.44%, $color-secondary 123.93%);
+}
+
+@mixin linearBackGroundRevert {
+  background: linear-gradient(193.33deg, $color-secondary -11.44%, $color-primary 123.93%);
+}
