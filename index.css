@@ -1,3 +1,31 @@
+@keyframes fadeout {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    background-color: transparent;
+  }
+}
+@keyframes appearance {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes rotation {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 body {
   height: 100vh;
   margin: 0;
@@ -474,13 +502,60 @@ body {
   animation-delay: 0.9s !important;
 }
 
-@keyframes appearance {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
+.loader {
+  background-color: #F6F6F6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeout 1.5s;
+  animation-delay: 3s;
+  animation-fill-mode: both;
+  z-index: 3;
+}
+.loader .group {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.group div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+}
+
+.primary {
+  border-top: 8px solid #9356DC;
+  width: 200px;
+  height: 200px;
+  animation: rotation 2s infinite linear;
+}
+
+.secondary {
+  border-left: 4px solid #FF79DA;
+  width: 190px;
+  height: 190px;
+  animation: rotation 3s infinite linear reverse;
+}
+
+.tertiary {
+  border-bottom: 12px solid #99E2D0;
+  width: 180px;
+  height: 180px;
+  animation: rotation 2s infinite linear;
+}
+
+.grey {
+  border-right: 2px solid #99E2D0;
+  width: 170px;
+  height: 170px;
+  animation: rotation 3s infinite linear reverse;
 }
 
 /*# sourceMappingURL=index.css.map */

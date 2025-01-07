@@ -1,5 +1,6 @@
 @use 'variables.scss' as *;
 @use 'mixin.scss' as *;
+@use 'keyframes.scss' as *;
 
 body {
   height: 100vh;
@@ -37,7 +38,7 @@ body {
       i {
         font-size: 1.5rem;
         color: $color-grey-very-dark;
-      } 
+      }
     }
   }
 }
@@ -157,7 +158,6 @@ body {
     color: $color-grey-dark;
   }
 }
-
 .restaurant {
   position: relative;
   overflow: hidden;
@@ -319,8 +319,8 @@ body {
         }
 
         &-item {
-          animation: appearance .8s;
-          animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+          animation: appearance 0.8s;
+          animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
           transform: scale(0);
           animation-fill-mode: both;
           .card {
@@ -367,7 +367,7 @@ body {
                 width: 80%;
                 justify-content: flex-start;
                 .label {
-                  margin : 0 0 5px 0;
+                  margin: 0 0 5px 0;
                   font-weight: 500;
                   font-size: 1.125rem;
                   line-height: 1.3181rem;
@@ -405,15 +405,14 @@ body {
               align-self: stretch;
               justify-content: center;
               align-items: center;
-              
+
               .check {
                 transform: rotate(270deg);
                 transition: 0.5s;
-                padding: .5rem;
+                padding: 0.5rem;
                 background: $color-white;
                 border-radius: 50%;
                 color: $color-tertiary;
-                
               }
             }
           }
@@ -461,16 +460,61 @@ body {
 }
 @for $i from 0 to 10 {
   .animation-delay-#{$i} {
-    animation-delay: #{calc($i/10)}s!important;
+    animation-delay: #{calc($i/10)}s !important;
+  }
+}
+.loader {
+  background-color: $color-background;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeout 1.5s;
+  animation-delay: 3s;
+  animation-fill-mode: both;
+  z-index: 3;
+  .group {
+    width: 200px;
+    height: 200px;
+    position: relative;
   }
 }
 
-@keyframes appearance {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
+.group div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+}
 
-  }
+.primary {
+  border-top: 8px solid $color-primary;
+  width: 200px;
+  height: 200px;
+  animation: rotation 2s infinite linear;
+}
+
+.secondary {
+  border-left: 4px solid $color-secondary;
+  width: 190px;
+  height: 190px;
+  animation: rotation 3s infinite linear reverse;
+}
+
+.tertiary {
+  border-bottom: 12px solid $color-tertiary;
+  width: 180px;
+  height: 180px;
+  animation: rotation 2s infinite linear;
+}
+
+.grey {
+  border-right: 2px solid $color-green-light;
+  width: 170px;
+  height: 170px;
+  animation: rotation 3s infinite linear reverse;
 }
