@@ -421,6 +421,13 @@ body {
       }
     }
   }
+  &-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2.1875rem;
+  }
 }
 .footer {
   background: $color-grey-very-dark;
@@ -452,9 +459,9 @@ body {
     }
   }
 }
-@for $i from 0 to 9 {
+@for $i from 0 to 10 {
   .animation-delay-#{$i} {
-    animation-delay:  #{$i/5}s!important;
+    animation-delay: #{calc($i/10)}s!important;
   }
 }
 
