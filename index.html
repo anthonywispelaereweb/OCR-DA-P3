@@ -21,10 +21,12 @@
       <img src="./assets/images/logo/ohmyfood@2x.svg" alt="ohmyfood">
     </header>
     <main>
-      <section class="search-ctn">
-        <i class="fas fa-location-dot"></i>
-        <input class="search-input" type="search" value="Paris, Belleville">
-      </section>
+      <form class="search-ctn">
+        <label for="searchInput">
+          <i class="fas fa-location-dot"></i>
+        </label>
+        <input id="searchInput" class="search-input" type="search" value="Paris, Belleville" name="search" placeholder="Rechercher votre ville ...">
+      </form>
       <section class="info-ctn">
         <h1 class="info-title t-center">Réservez le menu qui vous convient</h1>
         <p class="info-content t-center">Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>
