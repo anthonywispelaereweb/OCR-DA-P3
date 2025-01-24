@@ -599,7 +599,7 @@ body {
     width: calc(50% - 6.25rem);
   }
   .restaurant-map .restaurant-info-ctn {
-    justify-content: space;
+    justify-content: center;
   }
   .restaurant-map .restaurant-menu-title {
     padding-left: 3rem;
