@@ -283,7 +283,6 @@ body {
   cursor: pointer;
   position: relative;
   background-color: #101010;
-  color: #101010;
 }
 .restaurant-btn:hover::before {
   opacity: 1;
